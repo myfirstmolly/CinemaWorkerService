@@ -7,11 +7,10 @@ import java.util.List;
 import java.util.UUID;
 
 public interface WorkerService {
-    Worker addOwner(Worker owner);
 
     Worker addWorker(Worker worker);
 
-    List<Worker> getWorkers();
+    List<Worker> getAll();
 
     List<Worker> getWorkersByPosition(Position position);
 

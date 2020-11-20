@@ -15,18 +15,13 @@ public final class WorkerServiceImpl implements WorkerService {
     WorkerRepository workerRepository;
 
     @Override
-    public Worker addOwner(Worker owner) {
-        return workerRepository.save(owner);
-    }
-
-    @Override
     public Worker addWorker(Worker worker) {
         return workerRepository.save(worker);
     }
 
     @Override
-    public List<Worker> getWorkers() {
-        return workerRepository.getAllByPosition(Position.MANAGER);
+    public List<Worker> getAll() {
+        return workerRepository.findAll();
     }
 
     @Override

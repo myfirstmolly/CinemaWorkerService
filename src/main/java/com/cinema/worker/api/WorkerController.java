@@ -1,6 +1,7 @@
 package com.cinema.worker.api;
 
-import com.cinema.worker.model.*;
+import com.cinema.worker.model.Position;
+import com.cinema.worker.model.Worker;
 import com.cinema.worker.service.WorkerService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -18,27 +19,27 @@ import java.util.UUID;
 public class WorkerController {
 
     @Autowired
-    private WorkerService ownerService;
+    private WorkerService workerService;
 
     @PostMapping
     public Worker addWorker(@RequestBody Worker worker) {
-        return ownerService.addWorker(worker);
+        return workerService.addWorker(worker);
     }
 
     @GetMapping
     public List<Worker> getAll() {
-        return ownerService.getWorkers();
+        return workerService.getAll();
     }
 
     @GetMapping("{position}")
     public List<Worker> getAllByPosition(@PathVariable(value = "position")
                                                  Position position) {
-        return ownerService.getWorkersByPosition(position);
+        return workerService.getWorkersByPosition(position);
     }
 
     @DeleteMapping("{workerId}")
     public ResponseEntity<Void> deleteById(@PathVariable(value = "workerId") UUID id) {
-        ownerService.deleteWorkerById(id);
+        workerService.deleteWorkerById(id);
         return ResponseEntity.noContent().build();
     }
 
