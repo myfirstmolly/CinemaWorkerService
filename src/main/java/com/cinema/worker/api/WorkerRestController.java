@@ -16,7 +16,7 @@ import java.util.UUID;
 @RequestMapping("/worker")
 @AllArgsConstructor
 @NoArgsConstructor
-public class WorkerController {
+public class WorkerRestController {
 
     @Autowired
     private WorkerService workerService;

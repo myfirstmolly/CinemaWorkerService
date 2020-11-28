@@ -20,6 +20,11 @@ public final class WorkerServiceImpl implements WorkerService {
     }
 
     @Override
+    public Worker getById(UUID id) {
+        return workerRepository.findById(id).get();
+    }
+
+    @Override
     public List<Worker> getAll() {
         return workerRepository.findAll();
     }

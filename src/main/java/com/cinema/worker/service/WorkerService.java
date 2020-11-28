@@ -12,6 +12,8 @@ public interface WorkerService {
 
     List<Worker> getAll();
 
+    Worker getById(UUID id);
+
     List<Worker> getWorkersByPosition(Position position);
 
     void deleteWorkerById(UUID id);
